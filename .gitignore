@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.DS_Store
+.env*
+.dev.vars*
+claude-study-result*.json
+claude-study-receipt*.json
+*.jsonl
+*.jsonl.gz

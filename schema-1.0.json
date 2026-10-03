@@ -1,0 +1,382 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claude 账号受限观察站脱敏结果 1.0",
+  "description": "只允许分桶与枚举，不允许原始聊天、精确日期或身份字段。人工不能确认的字段填 unknown。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "provider",
+    "anchor_month",
+    "window_days",
+    "status",
+    "notice_category",
+    "physical_region",
+    "exit_region",
+    "window_complete",
+    "recruitment",
+    "network_kind",
+    "account_origin",
+    "plan",
+    "payment",
+    "gift_card",
+    "credential_use",
+    "client",
+    "client_integrity",
+    "automation",
+    "prior_warning",
+    "appeal",
+    "other_accounts_in_study",
+    "source",
+    "metrics",
+    "consent_aggregate"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "provider": {
+      "const": "claude"
+    },
+    "anchor_month": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[0-2])$"
+    },
+    "window_days": {
+      "const": 14
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "hold",
+        "disabled",
+        "recovered",
+        "unknown"
+      ]
+    },
+    "notice_category": {
+      "type": "string",
+      "enum": [
+        "not_received",
+        "usage_policy",
+        "region",
+        "terms",
+        "unusual_activity",
+        "multiple",
+        "unspecified",
+        "unknown"
+      ]
+    },
+    "physical_region": {
+      "type": "string",
+      "enum": [
+        "mainland_china",
+        "hong_kong_macau",
+        "taiwan",
+        "other_asia",
+        "north_america",
+        "europe",
+        "other",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "exit_region": {
+      "type": "string",
+      "enum": [
+        "mainland_china",
+        "hong_kong_macau",
+        "taiwan",
+        "other_asia",
+        "north_america",
+        "europe",
+        "other",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "window_complete": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "unknown"
+      ]
+    },
+    "recruitment": {
+      "type": "string",
+      "enum": [
+        "community",
+        "friend",
+        "search",
+        "other",
+        "unknown"
+      ]
+    },
+    "network_kind": {
+      "type": "string",
+      "enum": [
+        "residential_mobile",
+        "shared_proxy",
+        "private_datacenter",
+        "corporate",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "account_origin": {
+      "type": "string",
+      "enum": [
+        "own",
+        "shared",
+        "purchased",
+        "unknown"
+      ]
+    },
+    "plan": {
+      "type": "string",
+      "enum": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise",
+        "api",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "payment": {
+      "type": "string",
+      "enum": [
+        "direct",
+        "apple",
+        "google",
+        "third_party",
+        "free",
+        "mixed",
+        "other",
+        "unknown"
+      ]
+    },
+    "gift_card": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "unknown"
+      ]
+    },
+    "credential_use": {
+      "type": "string",
+      "enum": [
+        "native_oauth",
+        "intermediary_oauth",
+        "api_key",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "client": {
+      "type": "string",
+      "enum": [
+        "cli",
+        "desktop",
+        "web_mobile",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "client_integrity": {
+      "type": "string",
+      "enum": [
+        "official_unmodified",
+        "modified_third_party",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "automation": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "native_agents",
+        "scheduled",
+        "external_tool",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "prior_warning": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "unknown"
+      ]
+    },
+    "appeal": {
+      "type": "string",
+      "enum": [
+        "not_submitted",
+        "pending",
+        "restored",
+        "rejected",
+        "not_applicable",
+        "unknown"
+      ]
+    },
+    "other_accounts_in_study": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "unknown"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "self_report",
+        "local_script",
+        "mixed"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "responses_bucket",
+        "peak_daily_bucket",
+        "active_days_bucket",
+        "overnight_days_bucket",
+        "error_events_bucket",
+        "log_coverage",
+        "gateway_claude_activity",
+        "cli_version"
+      ],
+      "properties": {
+        "responses_bucket": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1_99",
+            "100_999",
+            "1000_9999",
+            "10000_plus",
+            "unknown"
+          ]
+        },
+        "peak_daily_bucket": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1_99",
+            "100_999",
+            "1000_plus",
+            "unknown"
+          ]
+        },
+        "active_days_bucket": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1_3",
+            "4_7",
+            "8_14",
+            "unknown"
+          ]
+        },
+        "overnight_days_bucket": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1_3",
+            "4_7",
+            "8_14",
+            "unknown"
+          ]
+        },
+        "error_events_bucket": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1_9",
+            "10_99",
+            "100_plus",
+            "unknown"
+          ]
+        },
+        "log_coverage": {
+          "type": "string",
+          "enum": [
+            "no_logs",
+            "retained_logs",
+            "partial",
+            "unknown"
+          ]
+        },
+        "gateway_claude_activity": {
+          "type": "string",
+          "enum": [
+            "yes",
+            "no",
+            "unknown"
+          ]
+        },
+        "cli_version": {
+          "type": "string",
+          "maxLength": 24,
+          "pattern": "^(unknown|\\d{1,3}\\.\\d{1,3}\\.\\d{1,5})$"
+        }
+      }
+    },
+    "consent_aggregate": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "normal"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "notice_category": {
+            "enum": [
+              "not_received",
+              "unknown"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "hold",
+              "disabled",
+              "recovered"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "notice_category": {
+            "not": {
+              "const": "not_received"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

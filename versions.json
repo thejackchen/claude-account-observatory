@@ -1,0 +1,47 @@
+{
+  "release": "v1.0.0",
+  "schema_version": "1.1",
+  "protocol_version": "1.0.0",
+  "prompt_version": "1.0.0",
+  "extractor_version": "1.0.0",
+  "skill_version": "1.0.0",
+  "provenance_note": "提示词与 Skill 使用由参与者声明；SHA256仅用于核对发布文件内容，不证明执行过程。",
+  "artifacts": [
+    {
+      "path": "tools/claude-study-extract.py",
+      "kind": "extractor",
+      "version": "1.0.0",
+      "sha256": "dc2bb4cf031dc341fb62a3a250a3f20b800ab4dedd218ffaa2dd94be6054d30c"
+    },
+    {
+      "path": "tools/统一提取提示词.txt",
+      "kind": "prompt",
+      "version": "1.0.0",
+      "sha256": "2e772888b7aa156c30c58d13d258143dd0746fb3190af2f5fa1c84a0c17b93e8"
+    },
+    {
+      "path": "protocol-v1.0.0.txt",
+      "kind": "protocol",
+      "version": "1.0.0",
+      "sha256": "883efc27053befde5c3863bb37b6578d59ab19d04d2dd71ff5b382cd47326ded"
+    },
+    {
+      "path": "SKILL.md",
+      "kind": "skill",
+      "version": "1.0.0",
+      "sha256": "ea30d9ca04684d731d669527e665ad92d9c2c933a4d68757d2806cdece7e0f74"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "kind": "skill",
+      "version": "1.0.0",
+      "sha256": "5d82e1b961b0f45aa862eb6c96cfc3fff522d70b652fbc632859b7a7d198456c"
+    },
+    {
+      "path": "study-schema.json",
+      "kind": "schema",
+      "version": "1.1",
+      "sha256": "19d49f6506067ebe00d52772c00e01f8b97478c2db866ba240a6808ccbdf8e79"
+    }
+  ]
+}

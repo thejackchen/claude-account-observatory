@@ -1,0 +1,33 @@
+name: 方法建议或合成复现
+description: 改进提示词、脚本、格式和研究方法；仅提供合成资料
+title: "[讨论] "
+body:
+  - type: markdown
+    attributes:
+      value: "请勿附真实聊天、通知截图、日志、账号/邮箱/IP、邀请码或管理回执。个人结果在观察站提交，GitHub 讨论方法。"
+  - type: input
+    id: version
+    attributes:
+      label: 涉及哪个发布/组件版本
+      placeholder: "例如 v1.0.0，或 Fork 的实验版本"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 具体问题、建议与依据
+      description: 如需复现，使用人工合成的最小样例
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: 会不会影响隐私、字段或结果可比性
+      description: 不确定可以明确写未知
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 公开资料确认
+      options:
+        - label: "我只提供合成样例，未上传任何真实聊天、日志、截图、身份、凭据、邀请码或管理回执。"
+          required: true

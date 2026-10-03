@@ -1,0 +1,4 @@
+interface:
+  display_name: "Claude 账号受限观察站"
+  short_description: "本机生成脱敏研究结果，保留方法版本，本人预览后提交"
+  default_prompt: "使用 $claude-account-observatory 帮我在本机生成一份 Claude 脱敏研究结果，保留版本和未知字段，不上传原始聊天。"
